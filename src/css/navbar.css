@@ -26,3 +26,7 @@
 .navbar-item:hover {
     text-decoration:underline;
 }
+
+.is-active {
+    background-color: transparent !important;
+}
