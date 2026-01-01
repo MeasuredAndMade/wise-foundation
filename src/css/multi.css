@@ -1,0 +1,19 @@
+.service-title {
+    color: #1F2A44;
+    font-family: "Playfair", serif;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.services-section{
+    border:1px solid black;
+}
+
+.service-box {
+    border:1px solid #c9ccd6;
+    height: 200px;
+}
+
+.service-descrip {
+    color: #1f2a44
+}
