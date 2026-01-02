@@ -1,7 +1,7 @@
 .service-title {
-    color: #1F2A44;
+    color: #1F2A44 !important;
     font-family: "Playfair", serif;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-weight: bold;
 }
 
@@ -15,5 +15,19 @@
 }
 
 .service-descrip {
-    color: #1f2a44
+    color: #1f2a44 !important;
+}
+
+.services-hr {
+    border: 0;
+    height: 2px;
+    background-color: #c9ccd6;
+}
+
+.about-link{
+    color:#1F2A44 !important;
+}
+
+.about-link:hover {
+    text-decoration: underline;
 }
