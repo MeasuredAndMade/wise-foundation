@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    background-color:#f7f6f3 !important;
+}
+/* Navigation CSS */
+.navbar, .navbar:hover, a:hover {
+    background-color: transparent !important;
+}
+
+.navbar {
+    /* border:1px solid black; */
+    height:200px;
+}
+
+.navbar-menu {
+    max-height: 100%;
+    /* border:1px solid red; */
+}
+
+.navbar-burger span {
+    color:#2E2E2E
+}
+
+.navbar-item {
+    color:#2e2e2e !important;
+    font-family: 'Playfair', serif;
+    font-size: 1.5rem;
+}
+
+.navbar-item:hover {
+    text-decoration:underline;
+}
+
+.is-active {
+    background-color: #f7f6f3 !important;
+}
