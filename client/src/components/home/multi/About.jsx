@@ -9,7 +9,7 @@ const AboutUs = () => {
                     <br /><br />
                     Every project starts with understanding your goals and ends with a solution that’s built with intention, not excess.</p>
                     <div className='has-text-left mt-3'>
-                        <a href='/' className='about-link'>Learn more about our approach →</a>
+                        <a href='/about' className='about-link'>Learn more about our approach →</a>
                     </div>
                 </div>
                 <div className='column is-6 m-auto'>
