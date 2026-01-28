@@ -1,18 +1,37 @@
 // LoginPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LoginPage = ({ login }) => {
     const [userId, setUserId] = useState('');
     const [pass, setPass] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        if (userId === 'user' && pass === 'pass') {
-            login(userId, pass);
-            navigate('/dashboard');
+
+    const handleLogin = async () => {
+        const body = { username: userId, password: pass};
+        // Remove this before production!
+        console.log(body)
+
+        try {
+            const response = await axios.post('http://localhost:5000/api/auth/signin', body);
+            console.log('Login successful: ', response.data.accessToken);
+            // Set Access Token
+            localStorage.setItem('x-access-token', response.data.accessToken);
+            const roles = response.data.roles;
+            console.log(roles);
+            const isAdmin = roles.includes('ROLE_ADMIN');
+            if(isAdmin) {
+                login();
+                navigate('/admin')
+            } else {
+                navigate('/')
+            }
+        } catch (error) {
+            console.error('Login error: ', error.response ? error.response.data : error.message);
         }
-    };
+    }
 
     return (
         <>

@@ -23,6 +23,7 @@ const Navbar = () => {
                     <a className='navbar-item px-5' href='/'>Home</a>
                     <a className='navbar-item px-5' href='/about'>About</a>
                     <a className='navbar-item px-5' href='/portfolio'>Portfolio</a>
+                    <a className='navbar-item px-5' href='https://measured-and-made.blogspot.com/'>Blog</a>
                     <a className='navbar-item px-5' href='/contact'>Contact</a>
                 </div>
             </div>
