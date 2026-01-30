@@ -20,9 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ exteneded: true }));
 
 const db = require('./app/models');
+const User = db.user;
 const Role = db.role;
-db.sequelize.sync({ }).then(() => {
+db.sequelize.sync({ /* force: true */ }).then(() => {
     console.log('DB Connected')
+    // initial();
+    // console.log("Reset and Resynced")
 });
 
 // Role implementation
@@ -43,6 +46,18 @@ app.get('/', (req, res) => {
 
 require('./app/routes/auth.routes.js')(app);
 require('./app/routes/user.routes.js')(app);
+
+app.get('/api/user/:id', async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id);
+        if(!user) {
+            return res.status(404).send({ message: 'User not found'});
+        }
+        res.send(user);
+    } catch (error) {
+        res.status(500).json({ error: "Server error" });
+    }
+})
 
 // setting up port/listen requests
 const PORT = process.env.PORT || 8080;
