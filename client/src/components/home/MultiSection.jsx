@@ -14,7 +14,7 @@ const MultiSection = () => {
                     <AboutUs />
                 </div>
                 
-                <div className='column is-offset-1-tablet is-10-tablet is-offset-0-desktop is-7-tablet is-4-desktop is-12-mobile services-section'>
+                <div className='column is-offset-1-tablet is-10-tablet is-offset-0-desktop is-7-tablet is-4-desktop is-12-mobile services-section pl-5'>
                     <hr className='has-background-grey-lighter is-hidden-desktop' />
                     <BlogPreview />
                     <hr className='services-hr' />

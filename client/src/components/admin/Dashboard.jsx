@@ -1,22 +1,29 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import Sidebar from './components/Sidebar';
+import '../../css/admin.css';
 
-const Dashboard = ({ logout }) => {
-    const navigate = useNavigate();
+const Dashboard = () => {
+    const token = localStorage.getItem('x-access-token');
+    const [user, setUser] = useState('');
+    
+    useEffect(() => {
+        if (!token) return;
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const userId = payload.id
+        fetch(`http://localhost:5000/api/user/${userId}`).then(res => res.json()).then(data => setUser(data)).catch(err => console.error(err));
+    },[]);
 
-    const handleLogout = () => {
-        logout();
-        navigate('/');
-    };
-
+    console.log(user.name);
+    
     return (
-        <div>
-            <h2>Hello user welcome to Dashboard</h2>
-            <h3>This page is protected</h3><br />
-            <button onClick={handleLogout}>
-                Logout
-            </button>
-        </div>
+            <div className='columns ml-3 mt-3'>
+                <div className='column is-2 '>
+                    {user && <Sidebar user={user} />}
+                </div>
+                <div className='column'>
+                    
+                </div>
+            </div>
     );
 };
 

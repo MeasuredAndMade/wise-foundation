@@ -1,0 +1,11 @@
+.side-link {
+    color: #1f2a44 !important;
+    background-color: transparent !important;
+}
+.sidebar a {
+    background-color: transparent !important;
+}
+
+.sidebar a:hover{
+    text-decoration: underline;
+}

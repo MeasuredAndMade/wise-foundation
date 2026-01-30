@@ -6,9 +6,9 @@ import Values from '../components/about/Values';
 import Contact from '../components/about/Contact';
 
 const About = () => {
-    useEffect(() => {
-        document.title = 'About Us - Measured & Made';
-    })
+    // useEffect(() => {
+    //     document.title = 'About Us - Measured & Made';
+    // })
     return (
         <div>
            <AboutHero />

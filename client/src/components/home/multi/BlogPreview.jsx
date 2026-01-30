@@ -32,8 +32,6 @@ const BlogPreview = () => {
         fetchAllPosts();
     }, [])
 
-    console.log(posts[1]);
-
     const getThumnail = (post) =>{
         const match = post.content.match(/<img[^>]+src="([^">]+)"/i); return match ? match[1] : null;
     }
@@ -66,21 +64,23 @@ const BlogPreview = () => {
                 <h2 className='title is-size-3 ml-5 service-title'>Latest Blogs</h2>
                 <br />
             </div>
-            <div className='columns is-vcentered'>
+            <div className='columns is-vcentered is-multiline'>
                 {displayedPosts.map(post => (
                     <>
-                        <div className='column is-4 is-vcentered' key={post.id}>
-                            <figure className='is-vcentered image is-128x128'>
-                                <img src={getThumnail(post)} alt={post.title} />
-                            </figure>
-                        </div>
-                        <div className='column'>
-                            <h3 className='subtitle service-title is-underlined is-size-5'>
-                                {post.title}
-                            </h3>
-                            <p className='is-size-6 blog-excerpt'>{getPostExcerpt(post, 150)}</p>
-                        </div>
-                        <hr className='has-background-grey-lighter' />
+                       
+                            <div className='column is-4 is-vcentered'>
+                                <figure className='is-vcentered image is-128x128'>
+                                    <img src={getThumnail(post)} alt={post.title} />
+                                </figure>
+                            </div>
+                            <div className='column is-8'>
+                                <h3 className='subtitle service-title is-underlined is-size-5'>
+                                    {post.title}
+                                </h3>
+                                <p className='is-size-6 blog-excerpt'>{getPostExcerpt(post, 150)}</p>
+                            </div>
+                            <hr className='has-background-grey-lighter' />
+                        
                     </>
                 ))}
             </div>

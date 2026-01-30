@@ -238,3 +238,12 @@ input::placeholder, textarea::placeholder {
     font-family: 'Playfair Display', serif;
     line-height: 1.5 !important;
 }
+.input-box {
+    color: #1f2a44 !important;
+}
+.input-link, .input-text {
+    color:#1f2a44 !important;
+}
+.input-link:hover{
+    text-decoration: underline;
+}

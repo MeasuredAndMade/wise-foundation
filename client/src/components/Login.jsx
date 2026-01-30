@@ -11,9 +11,7 @@ const LoginPage = ({ login }) => {
 
     const handleLogin = async () => {
         const body = { username: userId, password: pass};
-        // Remove this before production!
-        console.log(body)
-
+        
         try {
             const response = await axios.post('http://localhost:5000/api/auth/signin', body);
             console.log('Login successful: ', response.data.accessToken);
@@ -53,8 +51,8 @@ const LoginPage = ({ login }) => {
                                     <input className='input has-text-black my-2 has-background-grey-lighter is-large' type='password' placeholder='Password' value={pass} onChange={e => setPass(e.target.value)} />
                                 </div>
                             </div>
-                            <button className='button cta-button is-large is-fullwidth' onClick={handleLogin}>Login</button>
-                        <p className='subtitle input-text has-text-black is-size-6'>Don't have an account? <a className='input-link' href='/register'>Sign Up</a></p>
+                            <button className='button cta-button is-large is-fullwidth' type='button' onClick={handleLogin}>Login</button>
+                        <p className='subtitle input-text has-text-black is-size-6 mt-3'>Don't have an account? <a className='input-link' href='/register'>Sign Up</a></p>
                     </div>
                 </div>
             </div>
